@@ -36,7 +36,8 @@
         android:layout_toEndOf="@+id/img_team"
         android:layout_toRightOf="@+id/img_team"
         android:layout_below="@+id/tv_nama_team"
-        android:text="Nama Pelatuh"
+        android:text="Nama Pelatih"
+        android:textColor="#000"
         android:textSize="16sp"
         android:textStyle="bold"/>
     <TextView
@@ -46,6 +47,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/img_team"
         android:text="Nama Stadion"
+        android:textColor="#000"
         android:textStyle="bold"
         android:textSize="16sp"/>
 

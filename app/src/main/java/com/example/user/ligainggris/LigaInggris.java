@@ -1,8 +1,11 @@
 package com.example.user.ligainggris;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
 import org.json.JSONObject;
 
-public class LigaInggris {
+public class LigaInggris implements Parcelable {
     private String idTeam = "idTeam";
     private String namaTeam = "strTeam";
     private String gambarTeam = "strTeamBadge";
@@ -23,16 +26,19 @@ public class LigaInggris {
     private String jerseyTeam = "strTeamJersey";
     private String logoTeam = "strTeamLogo";
 
+    LigaInggris() {
+
+    }
 
 
-    LigaInggris(JSONObject obj){
+    LigaInggris(JSONObject obj) {
         try {
             String idTeam = obj.getString("idTeam");
             String namaTeam = obj.getString("strTeam");
             String gambarTeam = obj.getString("strTeamBadge");
             String intFormedYear = obj.getString("intFormedYear");
             String namaPelatih = obj.getString("strManager");
-            String namaStadion = obj.getString("strStadiom");
+            String namaStadion = obj.getString("strStadium");
             String gambarStadion = obj.getString("strStadiumThumb");
             String desdripsiStadion = obj.getString("strStadiumDescription");
             String lokasiStadion = obj.getString("strStadiumLocation");
@@ -66,7 +72,7 @@ public class LigaInggris {
             this.deskripsiTeam = desktipsiTeam;
             this.jerseyTeam = jerseyTeam;
             this.logoTeam = logoTeam;
-        }catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
@@ -223,4 +229,66 @@ public class LigaInggris {
     public void setLogoTeam(String logoTeam) {
         this.logoTeam = logoTeam;
     }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeString(this.idTeam);
+        dest.writeString(this.namaTeam);
+        dest.writeString(this.gambarTeam);
+        dest.writeString(this.intFormedYear);
+        dest.writeString(this.namaPelatih);
+        dest.writeString(this.namaStadion);
+        dest.writeString(this.gambarStadion);
+        dest.writeString(this.deskripsiStadion);
+        dest.writeString(this.lokasiStadion);
+        dest.writeString(this.kapsitasStadion);
+        dest.writeString(this.webTeam);
+        dest.writeString(this.fbTeam);
+        dest.writeString(this.twTeam);
+        dest.writeString(this.igTeam);
+        dest.writeString(this.youtubeTeam);
+        dest.writeString(this.negara);
+        dest.writeString(this.deskripsiTeam);
+        dest.writeString(this.jerseyTeam);
+        dest.writeString(this.logoTeam);
+    }
+
+    protected LigaInggris(Parcel in) {
+        this.idTeam = in.readString();
+        this.namaTeam = in.readString();
+        this.gambarTeam = in.readString();
+        this.intFormedYear = in.readString();
+        this.namaPelatih = in.readString();
+        this.namaStadion = in.readString();
+        this.gambarStadion = in.readString();
+        this.deskripsiStadion = in.readString();
+        this.lokasiStadion = in.readString();
+        this.kapsitasStadion = in.readString();
+        this.webTeam = in.readString();
+        this.fbTeam = in.readString();
+        this.twTeam = in.readString();
+        this.igTeam = in.readString();
+        this.youtubeTeam = in.readString();
+        this.negara = in.readString();
+        this.deskripsiTeam = in.readString();
+        this.jerseyTeam = in.readString();
+        this.logoTeam = in.readString();
+    }
+
+    public static final Creator<LigaInggris> CREATOR = new Creator<LigaInggris>() {
+        @Override
+        public LigaInggris createFromParcel(Parcel source) {
+            return new LigaInggris(source);
+        }
+
+        @Override
+        public LigaInggris[] newArray(int size) {
+            return new LigaInggris[size];
+        }
+    };
 }
