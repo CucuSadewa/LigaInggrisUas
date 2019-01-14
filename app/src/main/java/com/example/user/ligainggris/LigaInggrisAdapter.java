@@ -41,9 +41,9 @@ public class LigaInggrisAdapter extends RecyclerView.Adapter<LigaInggrisAdapter.
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder viewHolder, int i) {
-        viewHolder.tvNamaTeam.setText("Nama Team : \n "+getListligainggris().get(i).getNamaTeam());
-        viewHolder.tvNamaPelatih.setText("Nama Pelatih : \n "+getListligainggris().get(i).getNamaPelatih());
-        viewHolder.tvNamaStadion.setText("Nama Stadion : "+getListligainggris().get(i).getNamaStadion());
+        viewHolder.tvNamaTeam.setText(getListligainggris().get(i).getNamaTeam());
+//        viewHolder.tvNamaPelatih.setText("Nama Pelatih : \n "+getListligainggris().get(i).getNamaPelatih());
+//        viewHolder.tvNamaStadion.setText("Nama Stadion : "+getListligainggris().get(i).getNamaStadion());
         Glide.with(context)
                 .load(getListligainggris().get(i).getGambarTeam())
                 .into(viewHolder.imgTeam);
@@ -58,10 +58,10 @@ public class LigaInggrisAdapter extends RecyclerView.Adapter<LigaInggrisAdapter.
     public class ViewHolder extends RecyclerView.ViewHolder {
         @BindView(R.id.tv_nama_team)
         TextView tvNamaTeam;
-        @BindView(R.id.tv_nama_pelatih)
-        TextView tvNamaPelatih;
-        @BindView(R.id.tv_nama_stadion)
-        TextView tvNamaStadion;
+//        @BindView(R.id.tv_nama_pelatih)
+//        TextView tvNamaPelatih;
+//        @BindView(R.id.tv_nama_stadion)
+//        TextView tvNamaStadion;
         @BindView(R.id.img_team)
         ImageView imgTeam;
         //@BindView(R.id.img_stadion)

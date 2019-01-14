@@ -1,5 +1,6 @@
 package com.example.user.ligainggris;
 
+
 import android.os.Parcel;
 import android.os.Parcelable;
 
@@ -25,8 +26,10 @@ public class LigaInggris implements Parcelable {
     private String deskripsiTeam = "strDescriptionEN";
     private String jerseyTeam = "strTeamJersey";
     private String logoTeam = "strTeamLogo";
+    private String julukan = "strKeywords";
+    private String asalLiga = "strLeague";
 
-    LigaInggris() {
+    public LigaInggris(String strTeam, String strAlternate, String idLeague, String strLeague, String strManager, String strStadium, String strStadiumThumb, String strStadiumDescription, String strStadiumLocation, String intStadiumCapacity, String strWebsite, String strFacebook, String strTwitter, String strInstagram, String strDescriptionEN, String strTeamBadge, String strTeamJersey, String strTeamLogo, String strYoutube) {
 
     }
 
@@ -52,6 +55,8 @@ public class LigaInggris implements Parcelable {
             String desktipsiTeam = obj.getString("strDescriptionEN");
             String jerseyTeam = obj.getString("strTeamJersey");
             String logoTeam = obj.getString("strTeamLogo");
+            String julukan = obj.getString("strKeywords");
+            String asalLiga = obj.getString("strLeague");
 
             this.idTeam = idTeam;
             this.namaTeam = namaTeam;
@@ -72,11 +77,24 @@ public class LigaInggris implements Parcelable {
             this.deskripsiTeam = desktipsiTeam;
             this.jerseyTeam = jerseyTeam;
             this.logoTeam = logoTeam;
+            this.julukan = julukan;
+            this.asalLiga = asalLiga;
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
 
+    public LigaInggris() {
+
+    }
+
+    public String getAsalLiga() {
+        return asalLiga;
+    }
+
+    public void setAsalLiga(String asalLiga) {
+        this.asalLiga = asalLiga;
+    }
 
     public String getIdTeam() {
         return idTeam;
@@ -230,6 +248,14 @@ public class LigaInggris implements Parcelable {
         this.logoTeam = logoTeam;
     }
 
+    public String getJulukan() {
+        return julukan;
+    }
+
+    public void setJulukan(String julukan) {
+        this.julukan = julukan;
+    }
+
     @Override
     public int describeContents() {
         return 0;
@@ -256,6 +282,8 @@ public class LigaInggris implements Parcelable {
         dest.writeString(this.deskripsiTeam);
         dest.writeString(this.jerseyTeam);
         dest.writeString(this.logoTeam);
+        dest.writeString(this.julukan);
+        dest.writeString(this.asalLiga);
     }
 
     protected LigaInggris(Parcel in) {
@@ -278,6 +306,8 @@ public class LigaInggris implements Parcelable {
         this.deskripsiTeam = in.readString();
         this.jerseyTeam = in.readString();
         this.logoTeam = in.readString();
+        this.julukan = in.readString();
+        this.asalLiga = in.readString();
     }
 
     public static final Creator<LigaInggris> CREATOR = new Creator<LigaInggris>() {

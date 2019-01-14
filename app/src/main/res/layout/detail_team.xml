@@ -1,66 +1,273 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:tools="http://schemas.android.com/tools"
     tools:context=".MainActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
-        <FrameLayout
+        <RelativeLayout
+            android:layout_gravity="center"
             android:layout_width="match_parent"
-            android:layout_height="250dp">
+            android:layout_height="200dp"
+            android:layout_margin="15dp"
+            style="@style/Animation.AppCompat.Dialog">
 
-            <ImageView
+
+            <de.hdodenhof.circleimageview.CircleImageView
+
                 android:id="@+id/img_team_dt"
-                android:layout_width="250dp"
-                android:layout_height="250dp"
-                android:layout_gravity="center"
-                android:adjustViewBounds="true"
-                android:scaleType="fitXY" />
-            <TextView
-                android:id="@+id/tv_nama_team_dt"
-                style="@style/TextContent.Small.White"
-                android:padding="8dp"
-                android:text="Nama Team"
-                android:gravity="center_vertical"
-                android:drawablePadding="4dp"
-                android:textAppearance="@style/TextAppearance.AppCompat.Small"
-                android:background="#f327e49c"
-                android:layout_marginLeft="@dimen/activity_horizontal_margin"
-                android:layout_marginBottom="@dimen/activity_vertical_margin"
-                android:layout_gravity="bottom"/>
-        </FrameLayout>
-        <TextView
-            android:id="@+id/tv_nama_pelatih_dt"
-            android:text="Nama Pelatih"
-            android:layout_marginTop="@dimen/activity_vertical_margin"
-            android:layout_marginBottom="8dp"
+                android:layout_width="195dp"
+                android:layout_height="195dp"
+                android:layout_margin="10dp"
+                app:civ_border_color="@color/colorAccent"
+                android:layout_marginBottom="@dimen/activity_horizontal_margin"
+                app:civ_border_width="3dp"
+                android:layout_centerVertical="true"
+                android:layout_centerHorizontal="true"/>
+
+        </RelativeLayout>
+        <TableLayout
+            android:layout_width="match_parent"
+            android:paddingTop="@dimen/activity_horizontal_margin"
             android:layout_height="wrap_content"
-            android:layout_width="match_parent"/>
-        <TextView
-            android:id="@+id/tv_nama_stadion_dt"
-            android:text="Nama Stadion"
-            android:layout_marginBottom="8dp"
-            android:layout_height="wrap_content"
-            android:layout_width="match_parent" />
-        <TextView
-            android:id="@+id/tv_kasitas_stadion_dt"
-            android:text="Kapasitas"
-            android:layout_marginBottom="8dp"
-            android:layout_height="wrap_content"
-            android:layout_width="match_parent" />
+            android:layout_marginLeft="@dimen/activity_horizontal_margin"
+            android:layout_marginRight="@dimen/activity_horizontal_margin"
+            android:layout_marginBottom="@dimen/activity_vertical_margin">
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp">
+                <TextView
+                    style="@style/TextSpec.Field"
+                    android:text="Id Team"/>
+                <TextView
+                    android:id="@+id/tv_id_team_dt"
+                    style="@style/TextSpec.Value"
+                    />
+            </TableRow>
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp">
+                <TextView
+                    style="@style/TextSpec.Field"
+                    android:text="Nama Team"/>
+                <TextView
+                    android:id="@+id/tv_nama_team_dt"
+                    style="@style/TextSpec.Value"
+                    />
+            </TableRow>
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp">
+                <TextView
+                    style="@style/TextSpec.Field"
+                    android:text="Nama Pelatih"/>
+                <TextView
+                    android:id="@+id/tv_nama_pelatih_dt"
+                    style="@style/TextSpec.Value"
+                    />
+            </TableRow>
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp">
+                <TextView
+                    style="@style/TextSpec.Field"
+                    android:text="Julukan"/>
+                <TextView
+                    android:id="@+id/tv_julukan_dt"
+                    style="@style/TextSpec.Value"
+                    />
+            </TableRow>
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp">
+                <TextView
+                    style="@style/TextSpec.Field"
+                    android:text="Liga"/>
+                <TextView
+                    android:id="@+id/tv_str_liga"
+                    style="@style/TextSpec.Value"
+                    />
+            </TableRow>
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp">
+                <TextView
+                    style="@style/TextSpec.Field"
+                    android:text="Tahun Berdiri"/>
+                <TextView
+                    android:id="@+id/tv_thn_berdiri_dt"
+                    style="@style/TextSpec.Value"
+                    />
+            </TableRow>
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp">
+                <TextView
+                    style="@style/TextSpec.Field"
+                    android:text="Deskripsi"/>
+                <TextView
+                    android:id="@+id/tv_desc_team_dt"
+                    style="@style/TextSpec.Value"
+                    />
+            </TableRow>
+        </TableLayout>
+
         <ImageView
             android:id="@+id/img_stadion_dt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:scaleType="fitXY"/>
+        <TableLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:scaleType="fitXY"
-            />
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/activity_horizontal_margin"
+            android:layout_marginRight="@dimen/activity_horizontal_margin"
+            android:layout_marginBottom="@dimen/activity_vertical_margin">
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp">
+                <TextView
+                    style="@style/TextSpec.Field"
+                    android:text="Nama Stadion"/>
+                <TextView
+                    android:id="@+id/tv_nama_stadion_dt"
+                    style="@style/TextSpec.Value"
+                    />
+            </TableRow>
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp">
+                <TextView
+                    style="@style/TextSpec.Field"
+                    android:text="Kapasitas"/>
+                <TextView
+                    android:id="@+id/tv_kapasitas_stadion_dt"
+                    style="@style/TextSpec.Value"
+                    />
+            </TableRow>
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp">
+                <TextView
+                    style="@style/TextSpec.Field"
+                    android:text="Deskripsi"/>
+                <TextView
+                    android:id="@+id/tv_desc_stadion_dt"
+                    style="@style/TextSpec.Value"
+                    />
+            </TableRow>
+        </TableLayout>
+        <RelativeLayout
+            android:layout_gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="170dp"
+            android:layout_margin="15dp"
+            style="@style/Animation.AppCompat.Dialog">
 
-
-
+            <ImageView
+                android:id="@+id/img_logo_dt"
+                android:layout_width="165dp"
+                android:layout_margin="3dp"
+                android:layout_height="165dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:scaleType="centerInside"/>
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/img_jersey_dt"
+                android:layout_width="164dp"
+                android:layout_height="164dp"
+                android:layout_margin="3dp"
+                app:civ_border_color="@color/colorAccent"
+                android:layout_marginBottom="@dimen/activity_horizontal_margin"
+                android:layout_marginLeft="20dp"
+                android:layout_toRightOf="@+id/img_logo_dt"
+                android:layout_toEndOf="@+id/img_logo_dt"
+                app:civ_border_width="3dp"
+                />
+        </RelativeLayout>
+        <TableLayout
+            android:layout_below="@+id/img_logo_dt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/activity_horizontal_margin"
+            android:layout_marginRight="@dimen/activity_horizontal_margin"
+            android:layout_marginBottom="@dimen/activity_vertical_margin">
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp">
+                <TextView
+                    style="@style/TextSpec.Field"
+                    android:text="Website"/>
+                <TextView
+                    android:id="@+id/tv_nama_website_dt"
+                    style="@style/TextSpec.Value"
+                    />
+            </TableRow>
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp">
+                <TextView
+                    style="@style/TextSpec.Field"
+                    android:text="Facebook"/>
+                <TextView
+                    android:id="@+id/tv_facebook_dt"
+                    style="@style/TextSpec.Value"
+                    />
+            </TableRow>
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp">
+                <TextView
+                    style="@style/TextSpec.Field"
+                    android:text="Twitter"/>
+                <TextView
+                    android:id="@+id/tv_twitter_dt"
+                    style="@style/TextSpec.Value"
+                    />
+            </TableRow>
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp">
+                <TextView
+                    style="@style/TextSpec.Field"
+                    android:text="Instagram"/>
+                <TextView
+                    android:id="@+id/tv_instagram_dt"
+                    style="@style/TextSpec.Value"
+                    />
+            </TableRow>
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp">
+                <TextView
+                    style="@style/TextSpec.Field"
+                    android:text="Youtube"/>
+                <TextView
+                    android:id="@+id/tv_youtube_dt"
+                    style="@style/TextSpec.Value"
+                    />
+            </TableRow>
+        </TableLayout>
     </LinearLayout>
-
 </ScrollView>

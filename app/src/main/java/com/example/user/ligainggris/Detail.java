@@ -12,8 +12,9 @@ import com.bumptech.glide.Glide;
 public class Detail extends AppCompatActivity {
 
 
-    ImageView imgTeam, imgStadion, imgLogo;
-    TextView tvNamaTeam, tvNamaPelatih, tvNamaStadion, tvKapasitas, tvDescTeam, tvDescStadion, tvTahun;
+    ImageView imgTeam, imgStadion, imgLogo, imgJersey;
+    TextView tvidTeam, tvNamaTeam, tvNamaPelatih, tvNamaStadion, tvKapasitas, tvDescTeam, tvDescStadion, tvTahun,tvJulukan,
+            tvAsalLiga, tvWeb, tvFb, tvTw, tvIg, tvYoutube;
     Context context;
     Activity activity;
 
@@ -24,21 +25,52 @@ public class Detail extends AppCompatActivity {
         setContentView(R.layout.detail_team);
 
         imgTeam = findViewById(R.id.img_team_dt);
+        tvidTeam = findViewById(R.id.tv_id_team_dt);
         imgStadion = findViewById(R.id.img_stadion_dt);
+        imgLogo = findViewById(R.id.img_logo_dt);
+        imgJersey = findViewById(R.id.img_jersey_dt);
         tvNamaTeam = findViewById(R.id.tv_nama_team_dt);
         tvNamaPelatih = findViewById(R.id.tv_nama_pelatih_dt);
         tvNamaStadion = findViewById(R.id.tv_nama_stadion_dt);
-        tvKapasitas = findViewById(R.id.tv_kasitas_stadion_dt);
+        tvKapasitas = findViewById(R.id.tv_kapasitas_stadion_dt);
+        tvDescStadion = findViewById(R.id.tv_desc_stadion_dt);
+        tvTahun = findViewById(R.id.tv_thn_berdiri_dt);
+        tvDescTeam = findViewById(R.id.tv_desc_team_dt);
+        tvJulukan = findViewById(R.id.tv_julukan_dt);
+        tvAsalLiga = findViewById(R.id.tv_str_liga);
+        tvWeb = findViewById(R.id.tv_nama_website_dt);
+        tvFb = findViewById(R.id.tv_facebook_dt);
+        tvTw = findViewById(R.id.tv_twitter_dt);
+        tvIg = findViewById(R.id.tv_instagram_dt);
+        tvYoutube = findViewById(R.id.tv_youtube_dt);
 
 
-       LigaInggris pojo  = getIntent().getParcelableExtra("data");
 
 
-        tvNamaTeam.setText("Nama Team : "+pojo.getNamaTeam());
+        LigaInggris pojo  = getIntent().getParcelableExtra("data");
+
+
+
         Glide.with(this).load(pojo.getGambarTeam()).into(imgTeam);
-        tvKapasitas.setText("Kapasitas Stadion : "+pojo.getKapsitasStadion());
-        tvNamaStadion.setText("Nama Stadion : "+pojo.getNamaStadion());
-        tvNamaPelatih.setText("Nama Pelatih : "+pojo.getNamaPelatih());
+        Glide.with(this).load(pojo.getGambarStadion()).into(imgStadion);
+        Glide.with(this).load(pojo.getLogoTeam()).into(imgLogo);
+        Glide.with(this).load(pojo.getJerseyTeam()).into(imgJersey);
+        tvNamaTeam.setText(pojo.getNamaTeam());
+        tvNamaPelatih.setText(pojo.getNamaPelatih());
+        tvJulukan.setText(pojo.getJulukan());
+        tvAsalLiga.setText(pojo.getAsalLiga());
+        tvTahun.setText(pojo.getIntFormedYear());
+        tvDescTeam.setText(pojo.getDeskripsiTeam());
+        tvNamaStadion.setText(pojo.getNamaStadion());
+        tvKapasitas.setText(pojo.getKapsitasStadion());
+        tvDescStadion.setText(pojo.getDeskripsiStadion());
+        tvWeb.setText(pojo.getWebTeam());
+        tvFb.setText(pojo.getFbTeam());
+        tvTw.setText(pojo.getTwTeam());
+        tvIg.setText(pojo.getIgTeam());
+        tvYoutube.setText(pojo.getYoutubeTeam());
+        tvidTeam.setText(pojo.getIdTeam());
+
 
 
 //        Glide.with(this).load(getIntent().getStringExtra(EXTRA_IMG_TEAM)).into(imgTeam);

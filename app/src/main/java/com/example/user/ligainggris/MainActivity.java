@@ -102,6 +102,20 @@ public class MainActivity extends AppCompatActivity {
                    liga.setNamaPelatih(ligaInggris.get(position).getNamaPelatih());
                    liga.setNamaStadion(ligaInggris.get(position).getNamaStadion());
                    liga.setKapsitasStadion(ligaInggris.get(position).getKapsitasStadion());
+                   liga.setIdTeam(ligaInggris.get(position).getIdTeam());
+                   liga.setYoutubeTeam(ligaInggris.get(position).getYoutubeTeam());
+                   liga.setIgTeam(ligaInggris.get(position).getIgTeam());
+                   liga.setTwTeam(ligaInggris.get(position).getTwTeam());
+                   liga.setFbTeam(ligaInggris.get(position).getFbTeam());
+                   liga.setWebTeam(ligaInggris.get(position).getWebTeam());
+                   liga.setJerseyTeam(ligaInggris.get(position).getJerseyTeam());
+                   liga.setLogoTeam(ligaInggris.get(position).getLogoTeam());
+                   liga.setDeskripsiTeam(ligaInggris.get(position).getDeskripsiTeam());
+                   liga.setIntFormedYear(ligaInggris.get(position).getIntFormedYear());
+                   liga.setAsalLiga(ligaInggris.get(position).getAsalLiga());
+                   liga.setJulukan(ligaInggris.get(position).getJulukan());
+                   liga.setGambarStadion(ligaInggris.get(position).getGambarStadion());
+                   liga.setDeskripsiStadion(ligaInggris.get(position).getDeskripsiStadion());
 
 
                     Intent intent = new Intent(MainActivity.this,Detail.class);
