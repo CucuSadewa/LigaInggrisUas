@@ -23,6 +23,7 @@ public class Detail extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.detail_team);
+        getSupportActionBar().setTitle("Detail Team");
 
         imgTeam = findViewById(R.id.img_team_dt);
         tvidTeam = findViewById(R.id.tv_id_team_dt);
